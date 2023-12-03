@@ -1,5 +1,31 @@
 {
     "water_pump": {
-      "status": "normal"
+      "starts": "",
+      "runsCont": "",
+      "rotationDirection": "",
+      "isNoisy": "",
+      "vibrates": ""
+    },
+    "pump_head": {
+      "reduced": ""
+    },
+    "pump_flow": {
+      "reduced": ""
+    },
+    "strainer": {
+      "obstructed": "",
+      "buried": ""
+    },
+    "valves": {
+      "closed": ""
+    },
+    "water": {
+      "splashing": "",
+      "level": "",
+      "dirty": ""
+    },
+    "hose": {
+      "kinked" : "",
+      "clogged" : ""
     }
 }

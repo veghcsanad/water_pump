@@ -1,3 +1,48 @@
 {
-    "noise": "call_supplier"
+    "call supplier": {
+        "id": 0,
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "starts",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "runsCont",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "head",
+                "attribute": "reduced",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "flow",
+                "attribute": "reduced",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "isNoisy",
+                "operator": "equals",
+                "value": "no"
+            }
+        ],
+        "action" : "Call your pump supplier."
+    },
+    "submerge": {
+      "id": 1,
+      "condition": {
+        "entity_type": "water",
+        "attribute": "level",
+        "operator": "less_than",
+        "value": 10
+      },
+      "action": "make sure to fully submerge pump"
+    }
 }
