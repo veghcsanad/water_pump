@@ -1,16 +1,16 @@
 {
     "water_pump": {
-      "starts": "",
-      "runsCont": "",
-      "rotationDirection": "",
-      "isNoisy": "",
-      "vibrates": ""
+      "starts": "yes",
+      "runsCont": "yes",
+      "rotationDirection": "no",
+      "isNoisy": "no",
+      "vibrates": "no"
     },
     "pump_head": {
-      "reduced": ""
+      "reduced": "no"
     },
     "pump_flow": {
-      "reduced": ""
+      "reduced": "no"
     },
     "strainer": {
       "obstructed": "",
