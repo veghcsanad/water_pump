@@ -3,9 +3,20 @@ class ProblemSolverController:
         self.model = problem_solver_model
         self.view = problem_solver_view
 
-    def solve_problem(self):
+    def get_user_input(self):
+        user_input = input("Enter your command: ")
+        return user_input
+
+    def run(self):
+        while True:
+            user_input = self.get_user_input()
+            if user_input.lower() == "exit":
+                break
+            self.handle_user_input(user_input)
+            self.update_view()
+    '''def solve_problem(self):
         pass
-        '''pump_status = self.model.check_pump_status()
+        pump_status = self.model.check_pump_status()
 
         if pump_status == 'noise':
             self.model.call_supplier()
