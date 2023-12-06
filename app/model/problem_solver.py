@@ -1,7 +1,8 @@
 class ProblemSolverModel:
-    def __init__(self, domain_model, rule_model):
+    def __init__(self, domain_model, rule_model, question_manager):
         self.domain_model = domain_model
         self.rule_model = rule_model
+        self.question_manager = question_manager
 
     def evaluate_rule(self, rule):
         for condition in rule["conditions"]:
@@ -10,23 +11,21 @@ class ProblemSolverModel:
             operator = condition["operator"]
             value = condition["value"]
             status = self.domain_model.get_entity(entity_type)[attribute]
-            if status is not None:
+            if status is not None and status != "":
                 if operator == "equals" and status != value:
-                    return False
+                    return 0
             else:
-                print("I need more info")
-
-        self.rule_model.set_outcome(rule["action"])
-        print(rule["action"])
-        return True
+                self.question_manager.query(condition['entity'], condition['attribute'])
+                return -1
+        return 1
 
     def solve_problem(self):
         for rule in self.rule_model.get_rules():
-            self.evaluate_rule(self.rule_model.get_rules()[rule])
+            outcome = -1
+            while outcome == -1:
+                outcome = self.evaluate_rule(self.rule_model.get_rules()[rule])
+            if outcome == 1:
+                self.rule_model.set_outcome(rule["action"])
 
-    def check_pump_status(self):
-        pump = self.domain_model.get_water_pump()
-        return 'noise' # for now checking the status of the water pump is not implemented
-
-    def call_supplier(self):
-        print("Calling the pump supplier.")
+    def change_status(self, entity, attribute, status):
+        self.domain_model.get_entity(entity)[attribute] = status

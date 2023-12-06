@@ -1,16 +1,14 @@
 import tkinter as tk
 from tkinter import messagebox
-import json
 
 class ProblemSolverView:
-    def __init__(self, master, questions):
+    def __init__(self, master, question_manager, problem_solver):
         self.master = master
         self.master.title("Waterpump troubleshooting")
+        self.question_manager = question_manager
+        self.problem_solver = problem_solver
+        self.question = []
 
-        # Define questions and answers
-        self.questions = questions
-
-        self.current_question = 0
         self.selected_answer = tk.StringVar()
 
         self.question_label = tk.Label(master, text="")
@@ -26,46 +24,32 @@ class ProblemSolverView:
         self.next_button = tk.Button(master, text="Next", command=self.next_question)
         self.next_button.pack(pady=10)
 
-        # Display the first question
         self.load_question()
 
     def load_question(self):
-        question_data = self.questions[str(self.current_question)]
-        self.question_label.config(text=question_data['question'])
+        if len(self.question_manager.query_list) == 0:
+            self.question = []
+            messagebox.showinfo("What to do?", self.problem_solver.rule_model.outcome)
+            return
 
-        for i in range(len(question_data['answers'])):
-            self.radio_buttons[i].config(text=question_data['answers'][str(i)], state="normal")
+        self.question = self.question_manager.query_list[0]
+        self.question_label.config(text=self.question.question_text)
+
+        for i in range(len(self.question.answers)):
+            self.radio_buttons[i].config(text=self.question.answers[i], state="normal")
 
     def next_question(self):
-        # Check if an answer is selected
         if self.selected_answer.get() == "":
             messagebox.showwarning("Warning", "Please select an answer.")
             return
 
-        # Check if the selected answer is correct
-        question_data = self.questions[str(self.current_question)]
         selected_index = int(self.selected_answer.get())
-        # todo: modify stuff accordingly
+        self.question_manager.unquery
+        self.problem_solver.change_status(self.question.entity, self.question.attribute, self.question.answers[selected_index])
+        
         messagebox.showinfo("Question answered.", "Question answered.")
 
-        # Move to the next question or finish the quiz
         self.selected_answer.set("")
-        self.current_question += 1
+        self.question = []
 
-        if self.current_question < len(self.questions):
-            self.load_question()
-        else:
-            messagebox.showinfo("Completed", "All questions answered.")
-            self.master.destroy()
-
-
-json_file_path = 'knowledge/questions.json'
-
-with open(json_file_path, 'r') as file:
-    questions = json.load(file)
-
-root = tk.Tk()
-app = ProblemSolverView(root, questions)
-
-# Run the application
-root.mainloop()
+        self.load_question()
