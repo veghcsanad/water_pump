@@ -12,7 +12,8 @@
       "reduced": ""
     },
     "strainer": {
-      "obstructed_or_buried": ""
+      "obstructed": "",
+      "buried": ""
     },
     "valves": {
       "closed": ""
