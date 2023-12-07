@@ -1,7 +1,7 @@
 {
     "0": {
       "entity": "water_pump",
-      "attribute": "starts",
+      "attribute": "status",
       "question": "How does the water pump start?",
       "answers": {
         "0": "It starts and runs continously.",
@@ -37,7 +37,7 @@
 
     "2": {
       "entity": "pump_head",
-      "attribute": "reduced",
+      "attribute": "isReduced",
       "question": "What is the position of the pump head?",
       "answers": {
         "0": "fully reduced",
@@ -53,7 +53,7 @@
 
     "3": {
       "entity": "pump_flow",
-      "attribute": "reduced",
+      "attribute": "isReduced",
       "question": "What is the position of the pump flow?",
       "answers": {
         "0": "fully reduced",
@@ -70,37 +70,87 @@
     "4": {
       "entity": "water_pump",
       "attribute": "rotationDirection",
-      "question": "Is the pump running in the correct direction?",
+      "question": "What is the direction of rotation of the impeller?",
       "answers": {
-        "0": "yes",
-        "1": "no"
+        "0": "clockwise",
+        "1": "anti-clockwise"
       },
       "outcomes": {
-        "0": "yes",
-        "1": "no"
+        "0": "correct",
+        "1": "incorrect"
       }
     },
 
     "5": {
       "entity": "strainer",
-      "attribute": "obstructed_or_buried",
+      "attribute": "isObstructedOrBuried",
       "question": "What is the status of the strainer?",
       "answers": {
         "0": "It is obstructed.",
         "1": "It is buried.",
-        "2": "It is neither obstructed, nor buried."
+        "2": "It is neither obstructed, nor buried.",
+        "3": "It is both buried and obstructed."
       },
       "outcomes": {
-        "0": "obstructed",
-        "1": "buried",
-        "2": "no"
+        "0": "yes",
+        "1": "yes",
+        "2": "no",
+        "3": "yes"
       }
     },
 
     "6": {
       "entity": "valves",
-      "attribute": "closed",
+      "attribute": "areClosed",
       "question": "Are the valves on the discharge closed?",
+      "answers": {
+        "0": "yes",
+        "1": "no"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no"
+      }
+    },
+
+    "7": {
+      "entity": "water",
+      "attribute": "level",
+      "question": "On a scale of 1-5, how high is the water level?",
+      "answers": {
+        "0": "1",
+        "1": "2",
+        "2": "3",
+        "3": "4",
+        "4": "5"
+      },
+      "outcomes": {
+        "0": "low",
+        "1": "low",
+        "2": "high",
+        "3": "high",
+        "4": "high"
+      }
+    },
+
+    "8": {
+      "entity": "water",
+      "attribute": "isSplashing",
+      "question": "Is any water splashing or swriling near the pump?",
+      "answers": {
+        "0": "yes",
+        "1": "no"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no"
+      }
+    },
+
+    "9": {
+      "entity": "hose",
+      "attribute": "isKinkedOrClogged",
+      "question": "Is the discharge hose kinked or clogged?",
       "answers": {
         "0": "yes",
         "1": "no"

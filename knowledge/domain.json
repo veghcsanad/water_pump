@@ -1,6 +1,6 @@
 {
     "water_pump": {
-      "status": "",
+      "status": "start_run",
       "rotationDirection": "",
       "isNoisy": "",
       "vibrates": "",
