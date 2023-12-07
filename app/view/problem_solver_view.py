@@ -23,13 +23,13 @@ class ProblemSolverView:
 
         self.next_button = tk.Button(master, text="Next", command=self.next_question)
         self.next_button.pack(pady=10)
-
         self.load_question()
 
     def load_question(self):
         if len(self.question_manager.query_list) == 0:
             self.question = []
             messagebox.showinfo("What to do?", self.problem_solver.rule_model.outcome)
+            self.master.destroy()
             return
 
         self.question = self.question_manager.query_list[0]
@@ -44,7 +44,7 @@ class ProblemSolverView:
             return
 
         selected_index = int(self.selected_answer.get())
-        self.question_manager.unquery
+        self.question_manager.unquery()
         self.problem_solver.change_status(self.question.entity, self.question.attribute, self.question.answers[selected_index])
         
         messagebox.showinfo("Question answered.", "Question answered.")
@@ -52,4 +52,5 @@ class ProblemSolverView:
         self.selected_answer.set("")
         self.question = []
 
+        self.problem_solver.solve_problem()
         self.load_question()
