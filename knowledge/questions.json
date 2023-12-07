@@ -33,5 +33,81 @@
         "3": "yes",
         "4": "yes"
       }
+    },
+
+    "2": {
+      "entity": "pump_head",
+      "attribute": "reduced",
+      "question": "What is the position of the pump head?",
+      "answers": {
+        "0": "fully reduced",
+        "1": "half-way reduced",
+        "2": "not reduced"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no",
+        "2": "no"
+      }
+    },
+
+    "3": {
+      "entity": "pump_flow",
+      "attribute": "reduced",
+      "question": "What is the position of the pump flow?",
+      "answers": {
+        "0": "fully reduced",
+        "1": "half-way reduced",
+        "2": "not reduced"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no",
+        "2": "no"
+      }
+    },
+
+    "4": {
+      "entity": "water_pump",
+      "attribute": "rotationDirection",
+      "question": "Is the pump running in the correct direction?",
+      "answers": {
+        "0": "yes",
+        "1": "no"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no"
+      }
+    },
+
+    "5": {
+      "entity": "strainer",
+      "attribute": "obstructed_or_buried",
+      "question": "What is the status of the strainer?",
+      "answers": {
+        "0": "It is obstructed.",
+        "1": "It is buried.",
+        "2": "It is neither obstructed, nor buried."
+      },
+      "outcomes": {
+        "0": "obstructed",
+        "1": "buried",
+        "2": "no"
+      }
+    },
+
+    "6": {
+      "entity": "valves",
+      "attribute": "closed",
+      "question": "Are the valves on the discharge closed?",
+      "answers": {
+        "0": "yes",
+        "1": "no"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no"
+      }
     }
 }

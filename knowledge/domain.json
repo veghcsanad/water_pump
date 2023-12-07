@@ -1,19 +1,18 @@
 {
     "water_pump": {
       "starts": "",
-      "rotationDirection": "no",
+      "rotationDirection": "",
       "isNoisy": "",
-      "vibrates": "no"
+      "vibrates": ""
     },
     "pump_head": {
-      "reduced": "no"
+      "reduced": ""
     },
     "pump_flow": {
-      "reduced": "no"
+      "reduced": ""
     },
     "strainer": {
-      "obstructed": "",
-      "buried": ""
+      "obstructed_or_buried": ""
     },
     "valves": {
       "closed": ""

@@ -25,6 +25,18 @@
                 "attribute": "isNoisy",
                 "operator": "equals",
                 "value": "yes"
+            },
+            {
+                "entity": "strainer",
+                "attribute": "obstructed_or_buried",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "valves",
+                "attribute": "closed",
+                "operator": "equals",
+                "value": "yes"
             }
         ],
         "action" : "Call your pump supplier."
