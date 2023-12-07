@@ -1,9 +1,10 @@
 import json
 
 class Question:
-    def __init__(self, question_text, answers, entity, attribute):
+    def __init__(self, question_text, answers, outcomes, entity, attribute):
         self.question_text = question_text
         self.answers = answers
+        self.outcomes = outcomes
         self.entity = entity
         self.attribute = attribute
 
@@ -19,14 +20,16 @@ class QuestionManager:
             questions_data = json.load(file)
         for i in range(len(questions_data)):
             q = questions_data[str(i)]
-            self.add_question(q['question'], q['answers'], q['entity'], q['attribute'])
+            self.add_question(q['question'], q['answers'], q['outcomes'], q['entity'], q['attribute'])
 
-    def add_question(self, question_text, answers, entity, attribute):
+    def add_question(self, question_text, answers, outcomes, entity, attribute):
         answers_as_list = []
+        outcomes_as_list = []
         for i in range(len(answers)):
             answers_as_list.append(answers[str(i)])
+            outcomes_as_list.append(outcomes[str(i)])
 
-        question = Question(question_text, answers_as_list, entity, attribute)
+        question = Question(question_text, answers_as_list, outcomes_as_list, entity, attribute)
         self.questions.append(question)
     
     def query(self, entity, attribute):

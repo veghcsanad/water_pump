@@ -25,11 +25,10 @@ class ProblemSolverModel:
             if outcome == "incomplete":
                 return
             elif outcome == "not_applies":
-                self.rule_model.set_outcome("no action needed")
-                print("Rule " + rule + " does not apply.")
+                if self.rule_model.outcome is None or self.rule_model.outcome == "":
+                    self.rule_model.outcome = "no action needed"
             else:
-                self.rule_model.set_outcome(rule['action'])
-                print("Rule " + rule + " applies.")
+                self.rule_model.outcome = self.rule_model.get_rules()[rule]['action']
 
     def change_status(self, entity, attribute, status):
         self.domain_model.get_entity(entity)[attribute] = status

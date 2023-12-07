@@ -2,30 +2,36 @@
     "0": {
       "entity": "water_pump",
       "attribute": "starts",
-      "question": "Does the water pump start?",
+      "question": "How does the water pump start?",
       "answers": {
-        "0": "yes",
-        "1": "no"
+        "0": "It starts and runs continously.",
+        "1": "It starts but stops immediately.",
+        "2": "It does not start."
+      },
+      "outcomes": {
+        "0": "start_run",
+        "1": "start_notrun",
+        "2": "notstart"
       }
     },
 
     "1": {
       "entity": "water_pump",
-      "attribute": "runsCont",
-      "question": "Does the water pump run continuously after starting?",
+      "attribute": "isNoisy",
+      "question": "On a scale of 1-5, how noisy is the water pump?",
       "answers": {
-        "0": "yes",
-        "1": "no"
-      }
-    },
-
-    "2": {
-      "entity": "water_pump",
-      "attribute": "noisy",
-      "question": "Is the water pump noisy?",
-      "answers": {
-        "0": "yes",
-        "1": "no"
+        "0": "1",
+        "1": "2",
+        "2": "3",
+        "3": "4",
+        "4": "5"
+      },
+      "outcomes": {
+        "0": "no",
+        "1": "no",
+        "2": "no",
+        "3": "yes",
+        "4": "yes"
       }
     }
 }
