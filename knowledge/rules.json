@@ -1,22 +1,177 @@
 {
-    "call supplier": {
-        "id": 0,
+    "suspend pipe": {
         "conditions": [
             {
                 "entity": "water_pump",
-                "attribute": "starts",
+                "attribute": "status",
                 "operator": "equals",
-                "value": "notstart"
+                "value": "start_run"
             },
             {
                 "entity": "pump_head",
-                "attribute": "reduced",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "pump_flow",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "rotationDirection",
+                "operator": "equals",
+                "value": "correct"
+            },
+            {
+                "entity": "strainer",
+                "attribute": "isObstructedOrBuried",
+                "operator": "equals",
+                "value": "yes"
+            }
+        ],
+        "action": "Suspend the pipe higher, out of the silt/debris."
+    },
+
+    "stop water": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "pump_flow",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "rotationDirection",
+                "operator": "equals",
+                "value": "correct"
+            },
+            {
+                "entity": "strainer",
+                "attribute": "isObstructedOrBuried",
                 "operator": "equals",
                 "value": "no"
             },
             {
+                "entity": "valves",
+                "attribute": "areClosed",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "water",
+                "attribute": "level",
+                "operator": "equals",
+                "value": "high"
+            },
+            {
+                "entity": "water",
+                "attribute": "isSplashing",
+                "operator": "equals",
+                "value": "yes"
+            }
+        ],
+        "action": "Stop the water splashing or swirling to prevent air being drawn in."
+    },
+
+    "open valves": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
                 "entity": "pump_flow",
-                "attribute": "reduced",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "rotationDirection",
+                "operator": "equals",
+                "value": "correct"
+            },
+            {
+                "entity": "strainer",
+                "attribute": "isObstructedOrBuried",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "valves",
+                "attribute": "areClosed",
+                "operator": "equals",
+                "value": "yes"
+            }
+        ],
+        "action": "Open the valves."
+    },
+
+    "reverse pump direction": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "pump_flow",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "rotationDirection",
+                "operator": "equals",
+                "value": "incorrect"
+            }
+        ],
+        "action": "Reverse the pump rotation direction."
+    },
+
+    "refurbish": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
                 "operator": "equals",
                 "value": "no"
             },
@@ -25,38 +180,200 @@
                 "attribute": "isNoisy",
                 "operator": "equals",
                 "value": "yes"
+            }
+        ],
+        "action": "Refurbish the pump."
+    },
+
+    "call supplier": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "isNoisy",
+                "operator": "equals",
+                "value": "no"
+            }
+        ],
+        "action": "Call your supplier of this pump."
+    },
+
+    "submerge": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "pump_flow",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "rotationDirection",
+                "operator": "equals",
+                "value": "correct"
             },
             {
                 "entity": "strainer",
-                "attribute": "obstructed_or_buried",
+                "attribute": "isObstructedOrBuried",
                 "operator": "equals",
                 "value": "no"
             },
             {
                 "entity": "valves",
-                "attribute": "closed",
+                "attribute": "areClosed",
                 "operator": "equals",
-                "value": "yes"
+                "value": "no"
+            },
+            {
+                "entity": "water",
+                "attribute": "level",
+                "operator": "equals",
+                "value": "low"
             }
         ],
-        "action" : "Call your pump supplier."
+        "action": "Submerge the pump further to prevent air being drawn in."
     },
-    "no problem" : {
-        "id" : 1,
-        "conditions" : [
+
+    "unkink": {
+        "conditions": [
             {
                 "entity": "water_pump",
-                "attribute": "starts",
+                "attribute": "status",
                 "operator": "equals",
-                "value": "start"
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "pump_flow",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
             },
             {
                 "entity": "water_pump",
-                "attribute": "runsCont",
+                "attribute": "rotationDirection",
+                "operator": "equals",
+                "value": "correct"
+            },
+            {
+                "entity": "strainer",
+                "attribute": "isObstructedOrBuried",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "valves",
+                "attribute": "areClosed",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "water",
+                "attribute": "level",
+                "operator": "equals",
+                "value": "high"
+            },
+            {
+                "entity": "water",
+                "attribute": "isSplashing",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "hose",
+                "attribute": "isKinkedOrClogged",
                 "operator": "equals",
                 "value": "yes"
             }
         ],
-        "action" : "Everything is working as expected."
+        "action": "Un-kink or clog the pipework."
+    },
+
+    "call supplier 2": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "pump_flow",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "rotationDirection",
+                "operator": "equals",
+                "value": "correct"
+            },
+            {
+                "entity": "strainer",
+                "attribute": "isObstructedOrBuried",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "valves",
+                "attribute": "areClosed",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "water",
+                "attribute": "level",
+                "operator": "equals",
+                "value": "high"
+            },
+            {
+                "entity": "water",
+                "attribute": "isSplashing",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "hose",
+                "attribute": "isKinkedOrClogged",
+                "operator": "equals",
+                "value": "no"
+            }
+        ],
+        "action": "Call your supplier of this pump."
     }
 }
