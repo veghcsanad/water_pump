@@ -1,30 +1,44 @@
 {
     "water_pump": {
-      "starts": "",
+      "status": "",
       "rotationDirection": "",
       "isNoisy": "",
-      "vibrates": ""
+      "vibrates": "",
+      "ratedFrequency": ""
     },
     "pump_head": {
-      "reduced": ""
+      "isReduced": ""
     },
     "pump_flow": {
-      "reduced": ""
+      "isReduced": ""
     },
     "strainer": {
-      "obstructed": "",
-      "buried": ""
+      "isObstructedOrBuried": ""
     },
     "valves": {
-      "closed": ""
+      "areClosed": ""
     },
     "water": {
-      "splashing": "",
+      "isSplashing": "",
       "level": "",
-      "dirty": ""
+      "isDirty": ""
     },
     "hose": {
-      "kinked" : "",
-      "clogged" : ""
+      "isKinkedOrClogged" : ""
+    },
+    "sensors":{
+      "areCont" : ""
+    },
+    "power_supply": {
+      "isOn" : "",
+      "voltage": "",
+      "frequency": ""
+    },
+    "panel": {
+      "tripped" : ""
+    },
+    "impeller": {
+      "rotation" : "",
+      "isJammed" : ""
     }
 }
