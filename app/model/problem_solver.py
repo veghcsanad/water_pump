@@ -10,7 +10,7 @@ class ProblemSolverModel:
             attribute = condition["attribute"]
             operator = condition["operator"]
             value = condition["value"]
-            status = self.domain_model.get_entity(entity_type)[attribute]
+            status = self.domain_model.get_value(entity_type, attribute)
             if status is not None and status != "":
                 if operator == "equals" and status != value:
                     return "not_applies"
@@ -31,4 +31,4 @@ class ProblemSolverModel:
                 self.rule_model.outcome = self.rule_model.get_rules()[rule]['action']
 
     def change_status(self, entity, attribute, status):
-        self.domain_model.get_entity(entity)[attribute] = status
+        self.domain_model.set_value(entity, attribute, status)

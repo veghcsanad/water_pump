@@ -159,5 +159,121 @@
         "0": "yes",
         "1": "no"
       }
+    },
+
+    "10": {
+      "entity": "impeller",
+      "attribute": "isJammed",
+      "question": "Is the impeller jammed?",
+      "answers": {
+        "0": "yes",
+        "1": "no"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no"
+      }
+    },
+
+    "11": {
+      "entity": "power_supply",
+      "attribute": "voltage",
+      "question": "Is the voltage of the power supply within acceptable limits?",
+      "answers": {
+        "0": "yes",
+        "1": "no"
+      },
+      "outcomes": {
+        "0": "acceptable",
+        "1": "not_acceptable"
+      }
+    },
+
+    "12": {
+      "entity": "power_supply",
+      "attribute": "frequency",
+      "question": "What is the frequency of the supply?",
+      "answers": {
+        "0": "It is the same as the pump rated frequency.",
+        "1": "It is different from the pump rated frequency."
+      },
+      "outcomes": {
+        "0": "same",
+        "1": "different"
+      }
+    },
+
+    "13": {
+      "entity": "water",
+      "attribute": "isDirty",
+      "question": "Is sand or other solids getting into the pump?",
+      "answers": {
+        "0": "yes",
+        "1": "no"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no"
+      }
+    },
+
+    "14": {
+      "entity": "power_supply",
+      "attribute": "isOn",
+      "question": "Is the power supply on?",
+      "answers": {
+        "0": "yes",
+        "1": "no"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no"
+      }
+    },
+
+    "15": {
+      "entity": "panel",
+      "attribute": "tripped",
+      "question": "Has anything in the panel tripped?",
+      "answers": {
+        "0": "Yes, a seal fail relay device.",
+        "1": "Yes, an RCBO.",
+        "2": "Yes, an MCB or current protection device.",
+        "3": "No."
+      },
+      "outcomes": {
+        "0": "seal fail relay device",
+        "1": "RCBO",
+        "2": "MCB",
+        "3": "no"
+      }
+    },
+
+    "16": {
+      "entity": "sensors",
+      "attribute": "areCont",
+      "question": "How can you describe the motor temperature sensor cores?",
+      "answers": {
+        "0": "They are abrupt and random.",
+        "1": "They are continuous."
+      },
+      "outcomes": {
+        "0": "no",
+        "1": "yes"
+      }
+    },
+
+    "17": {
+      "entity": "application",
+      "attribute": "isCorrect",
+      "question": "Is the application correct for this pump?",
+      "answers": {
+        "0": "yes",
+        "1": "no"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no"
+      }
     }
 }

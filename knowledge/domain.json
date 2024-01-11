@@ -1,6 +1,6 @@
 {
     "water_pump": {
-      "status": "start_run",
+      "status": "",
       "rotationDirection": "",
       "isNoisy": "",
       "vibrates": "",
@@ -40,5 +40,8 @@
     "impeller": {
       "rotation" : "",
       "isJammed" : ""
+    },
+    "application": {
+      "isCorrect": ""
     }
 }
