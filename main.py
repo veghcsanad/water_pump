@@ -1,5 +1,5 @@
 import json
-from app.view.problem_solver_view import ProblemSolverView
+from app.view.problem_solver_view_st import ProblemSolverViewSt
 from app.model.question_manager import QuestionManager
 from app.model.rule_model import RuleModel
 from app.model.domain_model import DomainModel
@@ -20,7 +20,7 @@ def main():
     problem_solver = ProblemSolverModel(domain, rules, question_manager)
     problem_solver.solve_problem()
 
-    app = ProblemSolverView(question_manager, problem_solver)
+    app = ProblemSolverViewSt(question_manager, problem_solver)
 
 
 if __name__ == "__main__":
