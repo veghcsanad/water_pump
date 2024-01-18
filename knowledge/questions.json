@@ -2,9 +2,9 @@
     "0": {
       "entity": "water_pump",
       "attribute": "status",
-      "question": "How does the water pump start?",
+      "question": "What is the status of the water pump?",
       "answers": {
-        "0": "It starts and runs continously.",
+        "0": "It starts and runs continuously.",
         "1": "It starts but stops immediately.",
         "2": "It does not start."
       },
@@ -18,7 +18,7 @@
     "1": {
       "entity": "water_pump",
       "attribute": "isNoisy",
-      "question": "On a scale of 1-5, how noisy is the water pump?",
+      "question": "On a scale of 1-5, 1 being completely quiet and 5 being very loud, how noisy is the water pump?",
       "answers": {
         "0": "1",
         "1": "2",
@@ -70,7 +70,7 @@
     "4": {
       "entity": "water_pump",
       "attribute": "rotationDirection",
-      "question": "What is the direction of rotation of the impeller?",
+      "question": "Which way does the impeller rotate?",
       "answers": {
         "0": "clockwise",
         "1": "anti-clockwise"
@@ -116,13 +116,13 @@
     "7": {
       "entity": "water",
       "attribute": "level",
-      "question": "On a scale of 1-5, how high is the water level?",
+      "question": "How high does the water level reach?",
       "answers": {
-        "0": "1",
-        "1": "2",
-        "2": "3",
-        "3": "4",
-        "4": "5"
+        "0": "10",
+        "1": "20",
+        "2": "30",
+        "3": "40",
+        "4": "50"
       },
       "outcomes": {
         "0": "low",
@@ -136,7 +136,7 @@
     "8": {
       "entity": "water",
       "attribute": "isSplashing",
-      "question": "Is any water splashing or swriling near the pump?",
+      "question": "Is water splashing or swirling near the pump?",
       "answers": {
         "0": "yes",
         "1": "no"
@@ -194,7 +194,7 @@
       "attribute": "frequency",
       "question": "What is the frequency of the supply?",
       "answers": {
-        "0": "It is the same as the pump rated frequency.",
+        "0": "It is the same as the pump rated frequency (50Hz).",
         "1": "It is different from the pump rated frequency."
       },
       "outcomes": {
@@ -234,12 +234,12 @@
     "15": {
       "entity": "panel",
       "attribute": "tripped",
-      "question": "Has anything in the panel tripped?",
+      "question": "Is anything in the panel tripped?",
       "answers": {
         "0": "Yes, a seal fail relay device.",
         "1": "Yes, an RCBO.",
         "2": "Yes, an MCB or current protection device.",
-        "3": "No."
+        "3": "Nothing is tripped."
       },
       "outcomes": {
         "0": "seal fail relay device",
@@ -252,7 +252,7 @@
     "16": {
       "entity": "sensors",
       "attribute": "areCont",
-      "question": "How can you describe the motor temperature sensor cores?",
+      "question": "How would you describe the motor temperature sensor cores?",
       "answers": {
         "0": "They are abrupt and random.",
         "1": "They are continuous."

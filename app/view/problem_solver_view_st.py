@@ -7,16 +7,22 @@ class ProblemSolverViewSt:
 
         self.col1, self.col2 = st.columns([2, 1])
         self.col1.title(":blue[Troubleshoot Your Water Pump] :gear: :droplet:")
-        #self.col2.header("Advice")
         self.col2.markdown("<h3 style='text-align: center;'>"
                            "<b>"
                            "Here's what to do!"
                            "</b>"
                            "</h3>",
                            unsafe_allow_html=True)
+        self.col2.write("Use this as a guide if your :blue[water pump is not working] as expected! "
+                        "Answer a few questions and you'll get some :blue[advice] right here :point_down:")
         self.recs_container = self.col2.container(border=True)
+        self.recs_container.markdown("<p style='font-size:20px; color:#2970E7;'><b>Solution:</b></p>", unsafe_allow_html=True)
 
-        #self.default_recommendation_container = self.col2.empty()
+        self.col2.write("You want to :blue[change your answer to a previous question]? "
+                        "No problem! You can easily do so, just select a different answer. "
+                        "You can also :blue[start from scratch] by pressing the button below!")
+        if self.col2.button("Reset"):
+            streamlit_js_eval(js_expressions="parent.window.location.reload()")
         self.default_recommendation_container = self.recs_container.empty()
         self.default_recommendation_container.markdown("<h5 style='color: #938B84;'>"
                                                        "The recommended action could not yet be determined..."
@@ -39,8 +45,7 @@ class ProblemSolverViewSt:
             st.toast("Recommendation generated.")
             self.default_recommendation_container.empty()
             self.recs_container.write(f" ##### :bulb: :ok_hand: :orange[{self.problem_solver.rule_model.outcome}]")
-            if self.col2.button("Reset"):
-                streamlit_js_eval(js_expressions="parent.window.location.reload()")
+
             return
 
         # set and display current question
