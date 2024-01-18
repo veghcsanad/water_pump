@@ -8,6 +8,9 @@ class Question:
         self.entity = entity
         self.attribute = attribute
 
+    def show_text(self):
+        return self.question_text
+
 class QuestionManager:
     def __init__(self):
         self.questions = []
