@@ -1,5 +1,6 @@
 import json
 
+
 class Question:
     def __init__(self, question_text, answers, outcomes, entity, attribute):
         self.question_text = question_text
@@ -10,6 +11,7 @@ class Question:
 
     def show_text(self):
         return self.question_text
+
 
 class QuestionManager:
     def __init__(self):
@@ -34,12 +36,12 @@ class QuestionManager:
 
         question = Question(question_text, answers_as_list, outcomes_as_list, entity, attribute)
         self.questions.append(question)
-    
+
     def query(self, entity, attribute):
         for q in self.questions:
             if (q.entity == entity) and (q.attribute == attribute):
                 self.query_list.append(q)
                 return
-            
+
     def unquery(self):
         self.query_list.pop(0)
