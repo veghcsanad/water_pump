@@ -206,7 +206,7 @@
                 "value": "no"
             }
         ],
-        "action": "Call your supplier of this pump."
+        "action": "Call the supplier of this pump."
     },
 
     "submerge": {
@@ -314,7 +314,7 @@
                 "value": "yes"
             }
         ],
-        "action": "Un-kink or clog the pipework."
+        "action": "Un-kink or unclog the pipework."
     },
 
     "call supplier 2": {
@@ -374,7 +374,7 @@
                 "value": "no"
             }
         ],
-        "action": "Call your supplier of this pump."
+        "action": "Call the supplier of this pump."
     },
 
     "remove obstruction": {
@@ -584,7 +584,7 @@
                 "value": "no"
             }
         ],
-        "action": "Turn the power supply on..."
+        "action": "Turn on the power supply."
     },
 
     "refurbish 2": {
@@ -692,7 +692,7 @@
                 "value": "no"
             }
         ],
-        "action": "Remove the pump cable and check the resistance of each pair of live wires. Then check the resistance of each core to earth, and call your supplier of this pump."
+        "action": "Remove the pump cable and check the resistance of each pair of live wires. Then check the resistance of each core to earth, and call the supplier of this pump."
     },
 
     "check draw": {
@@ -722,7 +722,7 @@
                 "value": "yes"
             }
         ],
-        "action": "Check the current draw in each live core, then call your supplier of this pump."
+        "action": "Check the current draw in each live core, then call the supplier of this pump."
     },
 
     "refurbish 3": {
