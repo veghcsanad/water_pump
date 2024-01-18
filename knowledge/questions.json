@@ -1,0 +1,279 @@
+{
+    "0": {
+      "entity": "water_pump",
+      "attribute": "status",
+      "question": "What is the status of the water pump?",
+      "answers": {
+        "0": "It starts and runs continuously.",
+        "1": "It starts but stops immediately.",
+        "2": "It does not start."
+      },
+      "outcomes": {
+        "0": "start_run",
+        "1": "start_notrun",
+        "2": "notstart"
+      }
+    },
+
+    "1": {
+      "entity": "water_pump",
+      "attribute": "isNoisy",
+      "question": "On a scale of 1-5, 1 being completely quiet and 5 being very loud, how noisy is the water pump?",
+      "answers": {
+        "0": "1",
+        "1": "2",
+        "2": "3",
+        "3": "4",
+        "4": "5"
+      },
+      "outcomes": {
+        "0": "no",
+        "1": "no",
+        "2": "no",
+        "3": "yes",
+        "4": "yes"
+      }
+    },
+
+    "2": {
+      "entity": "pump_head",
+      "attribute": "isReduced",
+      "question": "What is the position of the pump head?",
+      "answers": {
+        "0": "fully reduced",
+        "1": "half-way reduced",
+        "2": "not reduced"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no",
+        "2": "no"
+      }
+    },
+
+    "3": {
+      "entity": "pump_flow",
+      "attribute": "isReduced",
+      "question": "What is the position of the pump flow?",
+      "answers": {
+        "0": "fully reduced",
+        "1": "half-way reduced",
+        "2": "not reduced"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no",
+        "2": "no"
+      }
+    },
+
+    "4": {
+      "entity": "water_pump",
+      "attribute": "rotationDirection",
+      "question": "Which way does the impeller rotate?",
+      "answers": {
+        "0": "clockwise",
+        "1": "anti-clockwise"
+      },
+      "outcomes": {
+        "0": "correct",
+        "1": "incorrect"
+      }
+    },
+
+    "5": {
+      "entity": "strainer",
+      "attribute": "isObstructedOrBuried",
+      "question": "What is the status of the strainer?",
+      "answers": {
+        "0": "It is obstructed.",
+        "1": "It is buried.",
+        "2": "It is neither obstructed, nor buried.",
+        "3": "It is both buried and obstructed."
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "yes",
+        "2": "no",
+        "3": "yes"
+      }
+    },
+
+    "6": {
+      "entity": "valves",
+      "attribute": "areClosed",
+      "question": "Are the valves on the discharge closed?",
+      "answers": {
+        "0": "yes",
+        "1": "no"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no"
+      }
+    },
+
+    "7": {
+      "entity": "water",
+      "attribute": "level",
+      "question": "How high does the water level reach?",
+      "answers": {
+        "0": "10",
+        "1": "20",
+        "2": "30",
+        "3": "40",
+        "4": "50"
+      },
+      "outcomes": {
+        "0": "low",
+        "1": "low",
+        "2": "high",
+        "3": "high",
+        "4": "high"
+      }
+    },
+
+    "8": {
+      "entity": "water",
+      "attribute": "isSplashing",
+      "question": "Is water splashing or swirling near the pump?",
+      "answers": {
+        "0": "yes",
+        "1": "no"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no"
+      }
+    },
+
+    "9": {
+      "entity": "hose",
+      "attribute": "isKinkedOrClogged",
+      "question": "Is the discharge hose kinked or clogged?",
+      "answers": {
+        "0": "yes",
+        "1": "no"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no"
+      }
+    },
+
+    "10": {
+      "entity": "impeller",
+      "attribute": "isJammed",
+      "question": "Is the impeller jammed?",
+      "answers": {
+        "0": "yes",
+        "1": "no"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no"
+      }
+    },
+
+    "11": {
+      "entity": "power_supply",
+      "attribute": "voltage",
+      "question": "Is the voltage of the power supply within acceptable limits?",
+      "answers": {
+        "0": "yes",
+        "1": "no"
+      },
+      "outcomes": {
+        "0": "acceptable",
+        "1": "not_acceptable"
+      }
+    },
+
+    "12": {
+      "entity": "power_supply",
+      "attribute": "frequency",
+      "question": "What is the frequency of the supply?",
+      "answers": {
+        "0": "It is the same as the pump rated frequency (50Hz).",
+        "1": "It is different from the pump rated frequency."
+      },
+      "outcomes": {
+        "0": "same",
+        "1": "different"
+      }
+    },
+
+    "13": {
+      "entity": "water",
+      "attribute": "isDirty",
+      "question": "Is sand or other solids getting into the pump?",
+      "answers": {
+        "0": "yes",
+        "1": "no"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no"
+      }
+    },
+
+    "14": {
+      "entity": "power_supply",
+      "attribute": "isOn",
+      "question": "Is the power supply on?",
+      "answers": {
+        "0": "yes",
+        "1": "no"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no"
+      }
+    },
+
+    "15": {
+      "entity": "panel",
+      "attribute": "tripped",
+      "question": "Is anything in the panel tripped?",
+      "answers": {
+        "0": "Yes, a seal fail relay device.",
+        "1": "Yes, an RCBO.",
+        "2": "Yes, an MCB or current protection device.",
+        "3": "Nothing is tripped."
+      },
+      "outcomes": {
+        "0": "seal fail relay device",
+        "1": "RCBO",
+        "2": "MCB",
+        "3": "no"
+      }
+    },
+
+    "16": {
+      "entity": "sensors",
+      "attribute": "areCont",
+      "question": "How would you describe the motor temperature sensor cores?",
+      "answers": {
+        "0": "They are abrupt and random.",
+        "1": "They are continuous."
+      },
+      "outcomes": {
+        "0": "no",
+        "1": "yes"
+      }
+    },
+
+    "17": {
+      "entity": "application",
+      "attribute": "isCorrect",
+      "question": "Is the application correct for this pump?",
+      "answers": {
+        "0": "yes",
+        "1": "no"
+      },
+      "outcomes": {
+        "0": "yes",
+        "1": "no"
+      }
+    }
+}

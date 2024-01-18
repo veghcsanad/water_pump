@@ -1,3 +1,799 @@
 {
-    "noise": "call_supplier"
+    "suspend pipe": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "pump_flow",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "rotationDirection",
+                "operator": "equals",
+                "value": "correct"
+            },
+            {
+                "entity": "strainer",
+                "attribute": "isObstructedOrBuried",
+                "operator": "equals",
+                "value": "yes"
+            }
+        ],
+        "action": "Suspend the pipe higher, out of the silt/debris."
+    },
+
+    "stop water": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "pump_flow",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "rotationDirection",
+                "operator": "equals",
+                "value": "correct"
+            },
+            {
+                "entity": "strainer",
+                "attribute": "isObstructedOrBuried",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "valves",
+                "attribute": "areClosed",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "water",
+                "attribute": "level",
+                "operator": "equals",
+                "value": "high"
+            },
+            {
+                "entity": "water",
+                "attribute": "isSplashing",
+                "operator": "equals",
+                "value": "yes"
+            }
+        ],
+        "action": "Stop the water splashing or swirling to prevent air being drawn in."
+    },
+
+    "open valves": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "pump_flow",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "rotationDirection",
+                "operator": "equals",
+                "value": "correct"
+            },
+            {
+                "entity": "strainer",
+                "attribute": "isObstructedOrBuried",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "valves",
+                "attribute": "areClosed",
+                "operator": "equals",
+                "value": "yes"
+            }
+        ],
+        "action": "Open the valves."
+    },
+
+    "reverse pump direction": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "pump_flow",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "rotationDirection",
+                "operator": "equals",
+                "value": "incorrect"
+            }
+        ],
+        "action": "Reverse the pump rotation direction."
+    },
+
+    "refurbish": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "isNoisy",
+                "operator": "equals",
+                "value": "yes"
+            }
+        ],
+        "action": "Refurbish the pump."
+    },
+
+    "call supplier": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "isNoisy",
+                "operator": "equals",
+                "value": "no"
+            }
+        ],
+        "action": "Call the supplier of this pump."
+    },
+
+    "submerge": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "pump_flow",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "rotationDirection",
+                "operator": "equals",
+                "value": "correct"
+            },
+            {
+                "entity": "strainer",
+                "attribute": "isObstructedOrBuried",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "valves",
+                "attribute": "areClosed",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "water",
+                "attribute": "level",
+                "operator": "equals",
+                "value": "low"
+            }
+        ],
+        "action": "Submerge the pump further to prevent air being drawn in."
+    },
+
+    "unkink": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "pump_flow",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "rotationDirection",
+                "operator": "equals",
+                "value": "correct"
+            },
+            {
+                "entity": "strainer",
+                "attribute": "isObstructedOrBuried",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "valves",
+                "attribute": "areClosed",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "water",
+                "attribute": "level",
+                "operator": "equals",
+                "value": "high"
+            },
+            {
+                "entity": "water",
+                "attribute": "isSplashing",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "hose",
+                "attribute": "isKinkedOrClogged",
+                "operator": "equals",
+                "value": "yes"
+            }
+        ],
+        "action": "Un-kink or unclog the pipework."
+    },
+
+    "call supplier 2": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "pump_flow",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "water_pump",
+                "attribute": "rotationDirection",
+                "operator": "equals",
+                "value": "correct"
+            },
+            {
+                "entity": "strainer",
+                "attribute": "isObstructedOrBuried",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "valves",
+                "attribute": "areClosed",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "water",
+                "attribute": "level",
+                "operator": "equals",
+                "value": "high"
+            },
+            {
+                "entity": "water",
+                "attribute": "isSplashing",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "hose",
+                "attribute": "isKinkedOrClogged",
+                "operator": "equals",
+                "value": "no"
+            }
+        ],
+        "action": "Call the supplier of this pump."
+    },
+
+    "remove obstruction": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_notrun"
+            },
+            {
+                "entity": "impeller",
+                "attribute": "isJammed",
+                "operator": "equals",
+                "value": "yes"
+            }
+        ],
+        "action": "Remove the obstruction and try again."
+    },
+
+    "correct supply voltage": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_notrun"
+            },
+            {
+                "entity": "impeller",
+                "attribute": "isJammed",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "power_supply",
+                "attribute": "voltage",
+                "operator": "equals",
+                "value": "not_acceptable"
+            }
+        ],
+        "action": "Correct the supply voltage."
+    },
+
+    "change supply": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_notrun"
+            },
+            {
+                "entity": "impeller",
+                "attribute": "isJammed",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "power_supply",
+                "attribute": "voltage",
+                "operator": "equals",
+                "value": "acceptable"
+            },
+            {
+                "entity": "power_supply",
+                "attribute": "frequency",
+                "operator": "equals",
+                "value": "different"
+            }
+        ],
+        "action": "Change the supply so that it is within the working range of the pump."
+    },
+
+    "remove obstruction 2": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_notrun"
+            },
+            {
+                "entity": "impeller",
+                "attribute": "isJammed",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "power_supply",
+                "attribute": "voltage",
+                "operator": "equals",
+                "value": "acceptable"
+            },
+            {
+                "entity": "power_supply",
+                "attribute": "frequency",
+                "operator": "equals",
+                "value": "same"
+            },
+            {
+                "entity": "strainer",
+                "attribute": "isObstructedOrBuried",
+                "operator": "equals",
+                "value": "yes"
+            }
+        ],
+        "action": "Remove the obstruction."
+    },
+
+    "suspend pump": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_notrun"
+            },
+            {
+                "entity": "impeller",
+                "attribute": "isJammed",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "power_supply",
+                "attribute": "voltage",
+                "operator": "equals",
+                "value": "acceptable"
+            },
+            {
+                "entity": "power_supply",
+                "attribute": "frequency",
+                "operator": "equals",
+                "value": "same"
+            },
+            {
+                "entity": "strainer",
+                "attribute": "isObstructedOrBuried",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "water",
+                "attribute": "isDirty",
+                "operator": "equals",
+                "value": "yes"
+            }
+        ],
+        "action": "Suspend the pump higher, so it is in cleaner water."
+    },
+
+    "call supplier 3": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_notrun"
+            },
+            {
+                "entity": "impeller",
+                "attribute": "isJammed",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "power_supply",
+                "attribute": "voltage",
+                "operator": "equals",
+                "value": "acceptable"
+            },
+            {
+                "entity": "power_supply",
+                "attribute": "frequency",
+                "operator": "equals",
+                "value": "same"
+            },
+            {
+                "entity": "strainer",
+                "attribute": "isObstructedOrBuried",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "water",
+                "attribute": "isDirty",
+                "operator": "equals",
+                "value": "no"
+            }
+        ],
+        "action": "Call the supplier of the pump."
+    },
+
+    "turn on power": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "notstart"
+            },
+            {
+                "entity": "power_supply",
+                "attribute": "isOn",
+                "operator": "equals",
+                "value": "no"
+            }
+        ],
+        "action": "Turn on the power supply."
+    },
+
+    "refurbish 2": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "notstart"
+            },
+            {
+                "entity": "power_supply",
+                "attribute": "isOn",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "panel",
+                "attribute": "tripped",
+                "operator": "equals",
+                "value": "seal fail relay device"
+            }
+        ],
+        "action": "Refurbish the pump. It will need new seals."
+    },
+
+    "remove cable": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "notstart"
+            },
+            {
+                "entity": "power_supply",
+                "attribute": "isOn",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "panel",
+                "attribute": "tripped",
+                "operator": "equals",
+                "value": "RCBO"
+            }
+        ],
+        "action": "Remove the pump cable and check the resistance of each core to earth. Also test the insulation resistance if possible. Then call the supplier of the pump."
+    },
+
+    "remove obstruction 3": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "notstart"
+            },
+            {
+                "entity": "power_supply",
+                "attribute": "isOn",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "panel",
+                "attribute": "tripped",
+                "operator": "equals",
+                "value": "MCB"
+            },
+            {
+                "entity": "impeller",
+                "attribute": "isJammed",
+                "operator": "equals",
+                "value": "yes"
+            }
+        ],
+        "action": "Remove the obstruction and try again."
+    },
+
+    "remove cable 2": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "notstart"
+            },
+            {
+                "entity": "power_supply",
+                "attribute": "isOn",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "panel",
+                "attribute": "tripped",
+                "operator": "equals",
+                "value": "MCB"
+            },
+            {
+                "entity": "impeller",
+                "attribute": "isJammed",
+                "operator": "equals",
+                "value": "no"
+            }
+        ],
+        "action": "Remove the pump cable and check the resistance of each pair of live wires. Then check the resistance of each core to earth, and call the supplier of this pump."
+    },
+
+    "check draw": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "notstart"
+            },
+            {
+                "entity": "power_supply",
+                "attribute": "isOn",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "panel",
+                "attribute": "tripped",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "sensors",
+                "attribute": "areCont",
+                "operator": "equals",
+                "value": "yes"
+            }
+        ],
+        "action": "Check the current draw in each live core, then call the supplier of this pump."
+    },
+
+    "refurbish 3": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "notstart"
+            },
+            {
+                "entity": "power_supply",
+                "attribute": "isOn",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "panel",
+                "attribute": "tripped",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "sensors",
+                "attribute": "areCont",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "application",
+                "attribute": "isCorrect",
+                "operator": "equals",
+                "value": "yes"
+            }
+        ],
+        "action": "Refurbish the pump. The wear parts are probably worn, causing reduced flow and overheating."
+    },
+
+    "install different": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "notstart"
+            },
+            {
+                "entity": "power_supply",
+                "attribute": "isOn",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "panel",
+                "attribute": "tripped",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "sensors",
+                "attribute": "areCont",
+                "operator": "equals",
+                "value": "no"
+            },
+            {
+                "entity": "application",
+                "attribute": "isCorrect",
+                "operator": "equals",
+                "value": "no"
+            }
+        ],
+        "action": "Install a different pump."
+    }
 }
