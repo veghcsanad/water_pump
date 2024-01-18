@@ -16,7 +16,12 @@ class ProblemSolverViewSt:
         self.col2.write("Use this as a guide if your :blue[water pump is not working] as expected! "
                         "Answer a few questions and you'll get some :blue[advice] right here :point_down:")
         self.recs_container = self.col2.container(border=True)
-        self.recs_container.markdown("<p style='font-size:20px; color:#2970E7;'><b>Solution:</b></p>", unsafe_allow_html=True)
+        self.recs_container.markdown("<p style='font-size:20px; color:#2970E7;'>"
+                                     "<b>"
+                                     "Solution:"
+                                     "</b>"
+                                     "</p>",
+                                     unsafe_allow_html=True)
 
         self.col2.write("You want to :blue[change your answer to a previous question]? "
                         "No problem! You can easily do so, just select a different answer. "
