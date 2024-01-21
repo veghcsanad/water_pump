@@ -51,7 +51,7 @@ class ProblemSolverViewSt:
             st.toast("Recommendation generated.")
             self.default_recommendation_container.empty()
             self.recs_container.write(f" ##### :bulb: :ok_hand: :orange[{self.problem_solver.rule_model.outcome}]")
-            self.col1.success(f" ##### :bulb: :ok_hand: :orange[{self.problem_solver.rule_model.outcome}]")
+            self.col1.info(f" ##### :bulb: :ok_hand: :orange[{self.problem_solver.rule_model.outcome}]")
 
             return
 
