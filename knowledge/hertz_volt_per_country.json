@@ -1,0 +1,177 @@
+{
+    "Argentina": {
+        "singleVoltage": "220",
+        "threePhaseVoltage": "380",
+        "frequency": "50"
+    },
+    "Armenia": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "Bangladesh": {
+        "singleVoltage": "220",
+        "threePhaseVoltage": "380",
+        "frequency": "50"
+    },
+    "Belarus": {
+        "singleVoltage": "220",
+        "threePhaseVoltage": "380",
+        "frequency": "50"
+    },
+    "Belgium": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "Brazil": {
+        "singleVoltage": "220",
+        "threePhaseVoltage": "380",
+        "frequency": "60"
+    },
+    "Bulgaria": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "Canada": {
+        "singleVoltage": "120",
+        "threePhaseVoltage": "600",
+        "frequency": "60"
+    },
+    "China": {
+        "singleVoltage": "220",
+        "threePhaseVoltage": "380",
+        "frequency": "50"
+    },
+    "Czech Republic": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "Egypt": {
+        "singleVoltage": "220",
+        "threePhaseVoltage": "380",
+        "frequency": "50"
+    },
+    "Finland": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "France": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "Hungary": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "India": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "Iran": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "Japan": {
+        "singleVoltage": "100",
+        "threePhaseVoltage": "200",
+        "frequency": "50"
+    },
+    "Mexico": {
+        "singleVoltage": "127",
+        "threePhaseVoltage": "480",
+        "frequency": "60"
+    },
+    "Netherlands": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "Pakistan": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "Romania": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "Russia": {
+        "singleVoltage": "220",
+        "threePhaseVoltage": "380",
+        "frequency": "50"
+    },
+    "Slovakia": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "Slovenia": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "South Africa": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "South Korea": {
+        "singleVoltage": "220",
+        "threePhaseVoltage": "380",
+        "frequency": "50"
+    },
+    "Spain": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "Sweden": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "Switzerland": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "Taiwan": {
+        "singleVoltage": "110",
+        "threePhaseVoltage": "220",
+        "frequency": "60"
+    },
+    "Turkey": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "Ukraine": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "United Arab Emirates": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "400",
+        "frequency": "50"
+    },
+    "United Kingdom": {
+        "singleVoltage": "230",
+        "threePhaseVoltage": "415",
+        "frequency": "50"
+    },
+    "United States": {
+        "singleVoltage": "120",
+        "threePhaseVoltage": "480",
+        "frequency": "60"
+    }
+}

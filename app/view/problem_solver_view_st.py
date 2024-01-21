@@ -3,7 +3,7 @@ from streamlit_js_eval import streamlit_js_eval
 
 
 class ProblemSolverViewSt:
-    def __init__(self, question_manager, problem_solver):
+    def __init__(self, question_manager, problem_solver, country_info):
 
         self.col1, self.col2 = st.columns([2, 1])
         self.col1.title(":blue[Troubleshoot Your Water Pump] :gear: :droplet:")
@@ -16,7 +16,12 @@ class ProblemSolverViewSt:
         self.col2.write("Use this as a guide if your :blue[water pump is not working] as expected! "
                         "Answer a few questions and you'll get some :blue[advice] right here :point_down:")
         self.recs_container = self.col2.container(border=True)
-        self.recs_container.markdown("<p style='font-size:20px; color:#2970E7;'><b>Solution:</b></p>", unsafe_allow_html=True)
+        self.recs_container.markdown("<p style='font-size:20px; color:#2970E7;'>"
+                                     "<b>"
+                                     "Solution:"
+                                     "</b>"
+                                     "</p>",
+                                     unsafe_allow_html=True)
 
         self.col2.write("You want to :blue[change your answer to a previous question]? "
                         "No problem! You can easily do so, just select a different answer. "
@@ -31,6 +36,7 @@ class ProblemSolverViewSt:
 
         self.question_manager = question_manager
         self.problem_solver = problem_solver
+        self.country_info = country_info
         self.current_question = None
         self.selected_answer = None
         self.current_question_index = 0
@@ -45,11 +51,17 @@ class ProblemSolverViewSt:
             st.toast("Recommendation generated.")
             self.default_recommendation_container.empty()
             self.recs_container.write(f" ##### :bulb: :ok_hand: :orange[{self.problem_solver.rule_model.outcome}]")
+            self.col1.success(f" ##### :bulb: :ok_hand: :orange[{self.problem_solver.rule_model.outcome}]")
 
             return
 
         # set and display current question
         self.current_question = self.question_manager.query_list[0]
+
+        if self.current_question.entity == "power_supply" and self.current_question.attribute == "voltage":
+            country = self.col1.selectbox("In which country is the power plant located?", list(self.country_info.country_info.keys()))
+            self.col1.write(f"In {country}, the following power supply standards apply: single-phase voltage is **{self.country_info.get_value(country, 'singleVoltage')} Volts**, three-phase voltage is **{self.country_info.get_value(country, 'threePhaseVoltage')} Volts** and frequency is **{self.country_info.get_value(country, 'frequency')} Hertz**. Please answer the following question(s) with this information in mind.")
+
         self.col1.markdown(f"### {self.current_question.show_text()}")
 
         selected_option = self.col1.radio(
