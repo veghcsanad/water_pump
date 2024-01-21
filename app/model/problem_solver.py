@@ -26,7 +26,7 @@ class ProblemSolverModel:
                 return
             elif outcome == "not_applies":
                 if self.rule_model.outcome is None or self.rule_model.outcome == "":
-                    self.rule_model.outcome = "no action needed"
+                    self.rule_model.outcome = "Action could not be determined. Call your supplier of this pump."
             else:
                 self.rule_model.outcome = self.rule_model.get_rules()[rule]['action']
 

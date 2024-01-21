@@ -35,6 +35,30 @@
         "action": "Suspend the pipe higher, out of the silt/debris."
     },
 
+    "call supplier 0": {
+        "conditions": [
+            {
+                "entity": "water_pump",
+                "attribute": "status",
+                "operator": "equals",
+                "value": "start_run"
+            },
+            {
+                "entity": "pump_head",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "yes"
+            },
+            {
+                "entity": "pump_flow",
+                "attribute": "isReduced",
+                "operator": "equals",
+                "value": "no"
+            }
+        ],
+        "action": "Call the supplier of the pump."
+    },
+
     "stop water": {
         "conditions": [
             {
